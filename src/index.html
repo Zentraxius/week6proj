@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Currency Exchange</title>
+</head>
+
+<body>
+  <h1>Welcome to Currency Exchange</h1>
+  <h2>Currency can be exchanged from U.S dollars</h2>
+  <h2>Into several other forms of currency listed below!</h2>
+
+  <form id="currencyForm">
+    <input type="number" id="currencyAmount" placeholder="$ to be converted">
+
+    <div class="form-group">
+
+      <div class="radio">
+        <label for="JPY">Convert to Japanese Yen
+          <input type="radio" name="exchangeTarget" value="currencyJPY">
+        </label>
+      </div>
+
+      <div class="radio">
+        <label for="JPY">Convert to Chinese Renminbi
+          <input type="radio" name="exchangeTarget" value="currencyCNY">
+        </label>
+      </div>
+
+      <div class="radio">
+        <label for="JPY">Convert to Europe Euro
+          <input type="radio" name="exchangeTarget" value="currencyEUR">
+        </label>
+      </div>
+
+      <div class="radio">
+        <label for="JPY">Convert to United Kingdom Pound Sterling
+          <input type="radio" name="exchangeTarget" value="currencyGBP">
+        </label>
+      </div>
+
+      <div class="radio">
+        <label for="JPY">Convert to Russian Ruble
+          <input type="radio" name="exchangeTarget" value="currencyRUB">
+        </label>
+      </div>
+
+      <div class="radio">
+        <label for="JPY">Convert to Other
+          <input type="radio" name="exchangeTarget" value="currencyOther">
+        </label>
+      </div>
+
+
+    </div>
+  </form>
+
+  <button class="submitForm">Click to Submit</button>
+
+  <h3 class="showResult"></h3>
+  <h3 class="showError"></h3>
+</body>
+
+</html>
