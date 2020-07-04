@@ -16,7 +16,7 @@ $(document).ready(function () {
       getElements(response);
     })();
   })
-  
+
   $(".convertCNY").click(function (event){
     event.preventDefault();
     (async () => {
@@ -51,6 +51,14 @@ $(document).ready(function () {
       const response = await currencyExchange.getWeatherByCity();
       getElements(response);
     })();
+    function getElements(response) {
+      if (response) {
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.EUR * userCurrencyAmount} Euros.`)
+      } else {
+        $(".showResult").text(`There was an error handling your request.`);
+        $(".showError").text(`Please check your inputs and try again!`);
+      }
+    }
   })
 
   $(".convertOther").click(function (event){
@@ -63,14 +71,13 @@ $(document).ready(function () {
 
       function getElements(response) {
         if (response) {
-          $(boxofchocolate)
+          $('.exchangedResult').text(`The API call returned the result ${response.status}, but your currency type could not be found, please try again or contact the developer.`)
         } else {
           $(".showResult").text(`There was an error handling your request.`);
           $(".showError").text(`Please check your inputs and try again!`);
         }
       }
     })
-  })
 
   $(".showRateTotal").click(function (event) {
     event.preventDefault();
