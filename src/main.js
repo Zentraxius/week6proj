@@ -20,7 +20,13 @@ $(document).ready(function () {
 
     function getElements(response) {
       if (response) {
-        $(".showResult").text(`The exchange rate is ${response.conversion_rates.CNY}`);
+        console.log(`${response.conversion_}${userExchangeTarget}`)
+        $('.exchangeRatesBox').show();
+        $("#eurRate").text(`The exchange rate is ${response.conversion_rates.EUR}`);
+        $("#gbpRate").text(`The exchange rate is ${response.conversion_rates.GBP}`);
+        $("#rubRate").text(`The exchange rate is ${response.conversion_rates.RUB}`);
+        $("#cnyRate").text(`The exchange rate is ${response.conversion_rates.CNY}`);
+        $("#jpyRate").text(`The exchange rate is ${response.conversion_rates.JPY}`);
 
         $(".showError").text(`For additional information on the API used please refer to the documentation at: ${response.documentation}.`);
       } else {

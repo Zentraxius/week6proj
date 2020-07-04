@@ -1,3 +1,7 @@
 body {
   text-align: center;
 }
+
+.exchangeRatesBox {
+  display: none;
+}

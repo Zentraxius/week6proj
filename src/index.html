@@ -9,7 +9,6 @@
   <h1>Welcome to Currency Exchange</h1>
   <h2>Currency can be exchanged from U.S dollars</h2>
   <h2>Into several other forms of currency listed below!</h2>
-
   <form id="currencyForm">
     <input type="number" id="currencyAmount" placeholder="$ to be converted">
 
@@ -35,7 +34,7 @@
 
       <div class="radio">
         <label for="JPY">Convert to United Kingdom Pound Sterling
-          <input type="radio" name="exchangeTarget" value="currencyGBP">
+          <input type="radio" name="exchangeTarget" value="rates.GBP">
         </label>
       </div>
 
@@ -56,6 +55,18 @@
   </form>
 
   <button class="submitForm">Click to Submit</button>
+
+  <div class="exchangeRatesBox">
+    <h3>Here are the following exchange rates:</h3>
+    <ul>
+      <li id="eurRate">1</li>
+      <li id="gbpRate">2</li>
+      <li id="rubRate">3</li>
+      <li id="cnyRate">4</li>
+      <li id="jpyRate">5</li>
+    </ul>
+  </div>
+
 
   <h3 class="showResult"></h3>
   <h3 class="showError"></h3>
