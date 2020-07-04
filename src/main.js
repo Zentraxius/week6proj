@@ -20,7 +20,6 @@ $(document).ready(function () {
 
     function getElements(response) {
       if (response) {
-        console.log(`${response.conversion_}${userExchangeTarget}`)
         $('.exchangeRatesBox').show();
         $("#eurRate").text(`The exchange rate is ${response.conversion_rates.EUR}`);
         $("#gbpRate").text(`The exchange rate is ${response.conversion_rates.GBP}`);
