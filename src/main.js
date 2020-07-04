@@ -8,6 +8,7 @@ console.log(userCurrencyAmount);
 console.log(userExchangeTarget);
 
 $(document).ready(function () {
+  
   $(".convertJPY").click(function (event){
     event.preventDefault();
     (async () => {
@@ -15,6 +16,14 @@ $(document).ready(function () {
       const response = await currencyExchange.getWeatherByCity();
       getElements(response);
     })();
+    function getElements(response) {
+      if (response) {
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.JPY * userCurrencyAmount} Japanese Yen.`)
+      } else {
+        $(".showResult").text(`There was an error handling your request.`);
+        $(".showError").text(`Please check your inputs and try again!`);
+      }
+    }
   })
 
   $(".convertCNY").click(function (event){
@@ -24,6 +33,14 @@ $(document).ready(function () {
       const response = await currencyExchange.getWeatherByCity();
       getElements(response);
     })();
+    function getElements(response) {
+      if (response) {
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.CNY * userCurrencyAmount} Chinese Renminbi.`)
+      } else {
+        $(".showResult").text(`There was an error handling your request.`);
+        $(".showError").text(`Please check your inputs and try again!`);
+      }
+    }
   })
 
   $(".convertRUB").click(function (event){
@@ -33,6 +50,14 @@ $(document).ready(function () {
       const response = await currencyExchange.getWeatherByCity();
       getElements(response);
     })();
+    function getElements(response) {
+      if (response) {
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.RUB * userCurrencyAmount} Russian Rubles.`)
+      } else {
+        $(".showResult").text(`There was an error handling your request.`);
+        $(".showError").text(`Please check your inputs and try again!`);
+      }
+    }
   })
 
   $(".convertGBP").click(function (event){
@@ -42,6 +67,14 @@ $(document).ready(function () {
       const response = await currencyExchange.getWeatherByCity();
       getElements(response);
     })();
+    function getElements(response) {
+      if (response) {
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.GBP * userCurrencyAmount} British Pounds Sterling.`)
+      } else {
+        $(".showResult").text(`There was an error handling your request.`);
+        $(".showError").text(`Please check your inputs and try again!`);
+      }
+    }
   })
 
   $(".convertEUR").click(function (event){
@@ -53,7 +86,7 @@ $(document).ready(function () {
     })();
     function getElements(response) {
       if (response) {
-        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.EUR * userCurrencyAmount} Euros.`)
+        $('.exchangedResult').text(`You can convert your currency into ${response.conversion_rates.EUR * userCurrencyAmount} Europe Euros.`)
       } else {
         $(".showResult").text(`There was an error handling your request.`);
         $(".showError").text(`Please check your inputs and try again!`);
@@ -90,11 +123,11 @@ $(document).ready(function () {
     function getElements(response) {
       if (response) {
         $('.exchangeRatesBox').show();
-        $("#eurRate").text(`The exchange rate is ${response.conversion_rates.EUR}`);
-        $("#gbpRate").text(`The exchange rate is ${response.conversion_rates.GBP}`);
-        $("#rubRate").text(`The exchange rate is ${response.conversion_rates.RUB}`);
-        $("#cnyRate").text(`The exchange rate is ${response.conversion_rates.CNY}`);
-        $("#jpyRate").text(`The exchange rate is ${response.conversion_rates.JPY}`);
+        $("#eurRate").text(`The exchange rate is ${response.conversion_rates.EUR} for Dollars to Euros, you could exchange $${userCurrencyAmount} for ${response.conversion_rates.EUR * userCurrencyAmount} Euros.`);
+        $("#gbpRate").text(`The exchange rate is ${response.conversion_rates.GBP} for Dollars to Pounds, you could exchange $${userCurrencyAmount} for ${response.conversion_rates.GBP * userCurrencyAmount} Pounds.`);
+        $("#rubRate").text(`The exchange rate is ${response.conversion_rates.RUB} for Dollars to Rubles, you could exchange $${userCurrencyAmount} for ${response.conversion_rates.RUB * userCurrencyAmount} Rubles.`);
+        $("#cnyRate").text(`The exchange rate is ${response.conversion_rates.CNY} for Dollars to Renminbi, you could exchange $${userCurrencyAmount} for ${response.conversion_rates.CNY * userCurrencyAmount} Renminbi.`);
+        $("#jpyRate").text(`The exchange rate is ${response.conversion_rates.JPY} for Dollars to Yen, you could exchange $${userCurrencyAmount} for ${response.conversion_rates.JPY * userCurrencyAmount} Yen.`);
         $(".showError").text(`For additional information on the API used please refer to the documentation at: ${response.documentation}.`);
       } else {
         $(".showResult").text(`There was an error handling your request.`);
