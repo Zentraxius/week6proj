@@ -3,12 +3,9 @@ import $ from "jquery";
 import "./styles.css";
 import { CurrencyExchange } from "./businesslogic.js";
 let userCurrencyAmount = $("#currencyAmount").val();
-let userExchangeTarget = $("input:radio[name=exchangeTarget]:checked").val();
-console.log(userCurrencyAmount);
-console.log(userExchangeTarget);
 
 $(document).ready(function () {
-  
+
   $(".convertJPY").click(function (event){
     event.preventDefault();
     (async () => {
