@@ -10,7 +10,8 @@ export class CurrencyExchange {
       } else {
         jsonifiedResponse = false;
       }
-      console.log(jsonifiedResponse);
+      console.log(jsonifiedResponse)
+      console.log(`${process.env.API_KEY}`)
       return jsonifiedResponse;
     } catch(error) {
       return false;
