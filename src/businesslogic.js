@@ -1,7 +1,7 @@
 // import $ from "jquery";
 
 export class CurrencyExchange {
-  async getWeatherByCity() {
+  async getCurrencyAPI() {
     try {
       let response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
       let jsonifiedResponse;

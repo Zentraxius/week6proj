@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
     function getElements(response) {
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
     function getElements(response) {
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
     function getElements(response) {
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
     function getElements(response) {
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
     event.preventDefault();
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
 
@@ -122,7 +122,7 @@ $(document).ready(function () {
     let userCurrencyAmount = $("#currencyAmount").val();
     (async () => {
       let currencyExchange = new CurrencyExchange();
-      const response = await currencyExchange.getWeatherByCity();
+      const response = await currencyExchange.getCurrencyAPI();
       getElements(response);
     })();
 
